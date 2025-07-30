@@ -1,0 +1,38 @@
+{% extends "mystoree/base.html" %}
+{% block content %}
+<h1>lakshmi provision store...</h1>
+
+<button style="background-color: darkgray; color: black; border-radius: 10px; padding: 7px;"><a href="{% url 'mystoree:addcustomer' %}">+ADD</a></button>
+{% for cus in items %}
+
+<div class="row">
+   <div class="col-md-4" ><img src="{{cus.cphoto}}" height="200px"/></div> 
+   <div class="col-md-2" style="margin-top: 60px; font-family: cursive; font-size: 20px;">{{cus.cname}}</div>
+   <div class="col-md-2" style="margin-top: 60px; font-family: cursive; font-size: 20px;">{{cus.cphone}}</div>
+   <div class="col-md-2" style="margin-top: 60px; font-family: cursive; font-size: 20px;"><button style="background-color: darkgray; color: black;
+    border-radius: 10px; padding: 7px;">
+    
+    <a href="{% url 'mystoree:details' cus.id %}">
+        DETAILS
+    </a>
+
+</button></div>
+
+    <div class="col-md-1" style="margin-top: 60px; font-family: cursive; font-size: 20px;">
+        <button style="background-color: darkgray; color: black;
+        border-radius: 10px; padding: 7px;">
+        <a href="{% url 'mystoree:update' cus.id %}"> UPDATE</a></button>
+    </div>
+    <div class="col-md-1" style="margin-top: 60px; font-family: cursive; font-size: 20px;">
+        <button style="background-color: darkgray; color: black;
+        border-radius: 10px; padding: 7px;">
+        <a href="{% url 'mystoree:delete' cus.id %}"> DELETE</a></button>
+    </div>
+   
+</div>
+
+
+{% endfor %}
+{% endblock %}
+
+

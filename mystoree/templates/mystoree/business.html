@@ -1,0 +1,37 @@
+{% extends "mystoree/base.html" %}
+{% block content %}
+<h1>lakshmi provision store...</h1>
+<div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 60px";><button style="background-color:gold; color: white;
+        border-radius: 80px; padding: 40px;">
+        
+        <a href="{% url 'mystoree:customer' %}">
+            Customer Details
+        </a>
+
+    </button></div>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 60px";><button style="background-color: gold; color: white;
+        border-radius: 80px; padding: 40px;">
+        
+        <a href="">
+            Monthly Details
+        </a>
+
+    </button></div>
+</div>
+<div>
+    <div class="row">
+        <div class="col-md-12" style="margin-top: 60px";><button style="background-color: gold; color: white;
+        border-radius: 80px; padding: 40px;">
+        
+        <a href="">
+            Yearly Details
+        </a>
+
+    </button></div>
+</div>
+{% endblock %}

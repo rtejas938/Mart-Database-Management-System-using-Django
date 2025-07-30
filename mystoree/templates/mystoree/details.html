@@ -1,0 +1,11 @@
+{% extends "mystoree/base.html" %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-4"><img src="{{cus.cphoto}}" height="200px"></div>
+    <div class="col-md-2" style="margin-top: 60px; font-family: cursive; font-size: 20px;">{{cus.cname}}</div>
+    <div class="col-md-2" style="margin-top: 60px; font-family: cursive; font-size: 20px;">{{cus.cphone}}</div>
+    <div class="col-md-4" style="margin-top: 60px; font-family: cursive; font-size: 20px;">{{cus.caddress}}</div>
+</div>
+
+{% endblock%}

@@ -1,0 +1,46 @@
+{% extends "mystoree/base.html" %}
+{% block content %}
+
+<h1>welcome to</h1>
+<h1>LAKSHMI PROVISION STORE</h1>
+<div class="row">
+    <div class="col-md-6" style="margin-top: 60px";><button style="background-color: pink; color: white;
+    border-radius: 80px; padding: 40px;">
+    
+    <a href="{% url 'mystoree:profile'%}">
+        Shope Details
+    </a>
+
+</button></div>
+    <div class="col-md-6" style="margin-top: 60px";><button style="background-color: pink; color: white;
+    border-radius: 80px; padding: 40px;">
+    
+    <a href="{% url 'mystoree:business'%}">
+         Busseness Details
+    </a>
+
+</button></div>
+
+</div>
+<div class="row">
+      <div class="col-md-6" style="margin-top: 60px";><button style="background-color: pink; color: white;
+    border-radius: 80px; padding: 40px;">
+    
+    <a href="">
+        Product Details
+    </a>
+
+</button></div>
+    <div class="col-md-6" style="margin-top: 60px";><button style="background-color: pink; color: white;
+    border-radius: 80px; padding: 40px;">
+    
+    <a href="{% url 'mystoree:imported'%}">
+        Imported Product
+    </a>
+
+</button></div>
+
+</div>
+
+
+{% endblock %}

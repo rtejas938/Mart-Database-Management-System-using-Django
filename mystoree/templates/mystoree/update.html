@@ -1,0 +1,17 @@
+<form method="POST">
+    {% csrf_token %}
+    
+    <label for="id_cname">Name</label>
+    {{form.cname}}
+    <br/>
+    <label for="id_cphoto">Photo</label>
+    {{form.cphoto}}
+    <br/>
+    <label for="id_cphone">Phone</label>
+    {{form.cphone}}
+    <br/>
+    <label for="id_caddress">Address</label>
+    {{form.caddress}}
+    <br/>
+    <button>UPDATE</button>
+</form>
