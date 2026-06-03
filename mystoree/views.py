@@ -1,8 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from .models import Customer
-from .forms import CustomerForm
-
+from .models import Customer,Monthly
+from .forms import CustomerForm,MonthlyForm
 # Create your views here.
 def home(request):
     return render(request ,'mystoree/home.html')
@@ -24,11 +23,13 @@ def customer(request):
     return render(request,'mystoree/customer.html',{'items':items})
 
 def addcustomer(request):
-    form = CustomerForm(request.POST or None)
-    if form.is_valid():
+    form = CustomerForm(request.POST,request.FILES)
+    mform = MonthlyForm(request.POST,request.FILES)
+    if form.is_valid() and mform.is_valid():
         form.save()
+        mform.save()
         return redirect('mystoree:customer')
-    return render(request ,'mystoree/addcustomer.html',{'form':form})
+    return render(request ,'mystoree/addcustomer.html',{'form':form,'mform':mform})
 
 def details(request,id):
     cus = Customer.objects.get(pk=id)
@@ -45,13 +46,18 @@ def delete(request,id):
 def update(request,id):
     cus = Customer.objects.get(pk=id)
     if request.method == 'POST':
-        form = CustomerForm(request.POST , instance=cus)
+        form = CustomerForm(request.POST ,request.FILES,instance=cus)
         if form.is_valid():
             form.save()
             return redirect('mystoree:customer')
     else:
         form = CustomerForm(instance=cus)
     return render(request,'mystoree/update.html',{'form':form})
+
+
+def monthly(request):
+    mon = Monthly.objects.all()
+    return render(request,'mystoree/monthly.html',{'mon':mon})
 
 
 

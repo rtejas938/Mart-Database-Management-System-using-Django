@@ -1,17 +1,18 @@
 {% extends "mystoree/base.html" %}
 {% block content %}
 
-<form method="POST" action="{% url 'mystoree:addcustomer'%}">
+<form method="POST" enctype="multipart/form-data" action="{% url 'mystoree:addcustomer'%}">
 
     {% csrf_token %}
     <lable for ="id_cname">Name</lable>
     {{form.cname}}
     <lable for="id_cphone">Phone</lable>
-    {{form.cphone}}
+    {{form.cphone}}<br>
     <lable for="id_cphoto">Photo</lable>
     {{form.cphoto}}
     <lable for="id_caddress">Address</lable>
     {{form.caddress}}
+    {{mform.as_p}}
 
     <button>Button</button>
 </form>

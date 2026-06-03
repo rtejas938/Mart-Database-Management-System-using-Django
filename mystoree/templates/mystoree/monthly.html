@@ -1,0 +1,44 @@
+{% extends "mystoree/base.html" %}
+{% block content %}
+
+
+<table style ="border-collapse:collapse ;border: 1px solid gray;">
+    <tr>
+        <th style ="border: 1px solid gray;padding:10px;">Name</th>
+        <th style ="border:1px solid gray;padding:10px;">January</th>
+        <th style ="border:1px solid gray;padding:10px;">Febraury</th>
+        <th style ="border:1px solid gray;padding:10px;">March</th>
+        <th style ="border:1px solid gray;padding:10px;">April</th>
+        <th style ="border:1px solid gray;padding:10px;">May</th>
+        <th style ="border:1px solid gray;padding:10px;">June</th>
+        <th style ="border:1px solid gray;padding:10px;">July</th>
+        <th style ="border:1px solid gray;padding:10px;">August</th>
+        <th style ="border:1px solid gray;padding:10px;">September</th>
+        <th style ="border:1px solid gray;padding:10px;">October</th>
+        <th style ="border:1px solid gray;padding:10px;">November</th>
+        <th style ="border:1px solid gray;padding:10px;">December</th>
+        <th style ="border:1px solid gray;padding:10px;">ACTION</th>
+        
+    </tr>
+    {% for m in mon %}  
+    <tr>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.name.cname}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.january}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.febraury}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.march}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.april}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.may}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.june}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.july}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.august}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.september}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.october}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.november}}</td>
+        <td style="border: 1px solid gray; padding: 10px;">{{m.december}}</td>
+        <td style="border: 1px solid gray; padding: 10px;"><button><a href="">DETAILS</a></button><button>UPDATE</button><button>DELETE</button></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}
